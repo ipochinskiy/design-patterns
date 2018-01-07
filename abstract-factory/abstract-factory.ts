@@ -23,17 +23,17 @@ class Vendor extends AbstractProduct {
 }
 
 abstract class AbstractFactory {
-	abstract create(name: string): object;
+	abstract create(name: string): AbstractProduct;
 }
 
 class EmployeeFactory extends AbstractFactory {
-	public create(name: string) {
+	public create(name: string): Employee {
 		return new Employee(name);
 	}
 }
 
 class VendorFactory extends AbstractFactory {
-	public create(name: string) {
+	public create(name: string): Vendor {
 		return new Vendor(name);
 	}
 }
